@@ -1,0 +1,16 @@
+.container {
+  background: url(../images/home_bg.png) no-repeat center/cover;
+  max-width: 100%;
+  height: auto;
+
+  &__photobox {
+    background-color: #0007;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: auto;
+  }
+}

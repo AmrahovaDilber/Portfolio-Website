@@ -1,0 +1,72 @@
+@import "_variables.scss";
+@import "_mediaQuery.scss";
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  padding: 1rem;
+  height: 100%;
+  background: #222935;
+
+  &__button {
+    position: absolute;
+    bottom: 1rem;
+    color: #fff;
+    background-color: #222935;
+    border: none;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    padding: 0.5rem;
+    &:hover {
+      background-color: #26c17e;
+    }
+  }
+
+  @include tablet {
+    .panel {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+
+      &-avatar img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid #ffffff;
+        margin-bottom: 10px;
+        margin-bottom: 4rem;
+        border: 0.5px solid #fff;
+      }
+
+      &__button {
+        left: 50%;
+        padding: 0.5rem 1rem;
+        background-color: #26c17e;
+        transition: 0.4s;
+        color: white;
+        cursor: pointer;
+        .text {
+          display: none !important;
+        }
+      }
+    }
+
+    .photo-box__class1 {
+      display: none;
+    }
+  }
+}
+
+@include tabletmin {
+  .panel-avatar img {
+    display: flex;
+    align-self: center;
+    width: 163px;
+    height: 163px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin-bottom: 10px;
+  }
+}

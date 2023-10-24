@@ -1,0 +1,37 @@
+@import "_variables.scss";
+@import "_mediaQuery.scss";
+
+.navbar {
+  margin-top: 2rem;
+  @include tablet {
+    padding: 0;
+  }
+  &__list {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    @include tablet {
+      align-items: center;
+    }
+    &-item {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      cursor: pointer;
+      color: $gray-color;
+      &:hover {
+        color: $primary-color;
+        a {
+          color: $primary-color;
+        }
+      }
+      a {
+        text-decoration: none;
+        color: $gray-color;
+        @include tablet {
+          display: none;
+        }
+      }
+    }
+  }
+}

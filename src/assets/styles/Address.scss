@@ -1,0 +1,30 @@
+@import "_variables.scss";
+@import "_mediaQuery.scss";
+
+.contacts__item {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  color: $secondary-color;
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+
+    & p {
+      font-weight: 700;
+      font-size: 16px;
+      color: $secondary-color;
+    }
+    & a {
+      color: $gray-color;
+    }
+  }
+}
+
+.icon {
+  margin-right: 20px;
+  width: 30px;
+  height: 30px;
+  color: $primary-color;
+}
