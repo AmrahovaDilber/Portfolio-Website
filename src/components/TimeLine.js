@@ -22,3 +22,4 @@ function TimeLine({ data, id }) {
   );
 }
 export default TimeLine;
+

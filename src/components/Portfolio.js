@@ -20,6 +20,7 @@ const Portfolio = ({ id }) => {
   }, [data, activeTab]);
 
   return (
+    
     <section className="portfolio-container" id={id}>
       <h1>Portfolio</h1>
       <ul className="tabs">

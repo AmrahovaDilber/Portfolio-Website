@@ -1,45 +1,32 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import PropTypes from "prop-types";
-import {
-  faUser,
-  faGraduationCap,
-  faPen,
-  faSuitcase,
-  faLocationArrow,
-  faComment,
-} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import { Link } from "react-scroll";
+import { navlist } from "../utils/navList";
+import { useState } from "react";
 import "../assets/styles/Navigation.scss";
 
-const NavItem = ({ icon, text, href }) => (
-  <li className="navbar__list-item">
-    <FontAwesomeIcon icon={icon} />
-    <a href={href}>{text}</a>
-  </li>
-);
-const Navigation = () => {
-  const navItems = [
-    { icon: faUser, text: "About me", href: "#about" },
-    { icon: faGraduationCap, text: "Education", href: "#education" },
-    { icon: faPen, text: "Experience", href: "#experience" },
-    { icon: faSuitcase, text: "Portfolio", href: "#portfolio" },
-    { icon: faLocationArrow, text: "Contacts", href: "#contacts" },
-    { icon: faComment, text: "Feedbacks", href: "#feedbacks" },
-  ];
+function Navigation() {
+  const [activeTab, setactiveTab] = useState("aboutMe");
+
+  const navList = navlist.map((list) => (
+    <li key={list.id}>
+      <Link
+        to={list.to}
+        className={`nav-link ${activeTab === list.to ? "active" : ""}`}
+        onClick={() => setactiveTab(list.to)}
+      >
+        <div className="nav-item-wrapper">
+          <span>{list.icon}</span>
+          <span className="nav-text">{list.list}</span>
+        </div>
+      </Link>
+    </li>
+  ));
 
   return (
-    <div className="navbar">
-      <ul className="navbar__list">
-        {navItems.map((item, index) => (
-          <NavItem key={index} {...item} />
-        ))}
-      </ul>
-    </div>
+    <nav className="nav">
+      <ul className="nav-list">{navList}</ul>
+    </nav>
   );
-};
-NavItem.propTypes = {
-  icon: PropTypes.object.isRequired,
-  text: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-};
+}
 
 export default Navigation;

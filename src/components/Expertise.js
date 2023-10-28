@@ -3,6 +3,7 @@ import "../assets/styles/Expertise.scss";
 
 function Expertise({ id, data }) {
   return (
+    
     <ul id={id}>
       <h1>Experience</h1>
       {data.map((experience, index) => (

@@ -1,80 +1,64 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faFacebook,
-  faSkype,
-} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaEnvelope } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
 import "../assets/styles/Address.scss";
 
-const Address = ({id}) => {
+const Address = ({ id }) => {
+  const handleMailClick = (e) => {
+    e.preventDefault();
+    window.location.href = "mailto:dilberamrahova1@gmail.com";
+  };
+
   return (
-    <div id={id} className="contacts">
+    <>
       <h1>Contacts</h1>
-      <p className="contacts__item">
-        <FontAwesomeIcon icon={faPhone} className="icon" />
-        <div className="contacts__item-details">
-          <a href="tel:+994 051 548 92 72">
-            <p> 051 548 92 72</p>
-          </a>
+      <div className="contacts">
+        <FaPhoneAlt color="#26C17E" size={30} />
+        <Link to="tel:+994 51 548 92 72">
+          <h3>+994 51 548 92 72</h3>
+        </Link>
+      </div>
+      <div className="contacts">
+        <FaEnvelope color="#26C17E" size={30} />
+        <Link to="dilberamrahova1@gmail.com" onClick={handleMailClick}>
+          <h3>dilberamrahova1@gmail.com</h3>
+        </Link>
+      </div>
+      <div className="contacts">
+        <FaTwitter color="#26C17E" size={30} />
+        <div>
+          <h3>Twitter</h3>
+          <Link to="https://twitter.com/wordpress">
+            <span className="link">https://twitter.com/wordpress</span>
+          </Link>
         </div>
-      </p>
-
-      <p className="contacts__item">
-        <FontAwesomeIcon icon={faEnvelope} className="icon" />
-        <div className="contacts__item-details">
-          <a href="mailto:someone@example.com">
-            <p>dilberamrahova1@gmail.com</p>
-          </a>
+      </div>
+      <div className="contacts">
+        <BsLinkedin color="#26C17E" size={30} />
+        <div>
+          <h3>LinkedIn</h3>
+          <Link to="https://www.linkedin.com/in/dilb%C9%99r-%C9%99mrahova-12b384275/">
+            <span className="link">
+              https://www.linkedin.com/in/dilberamrahova
+            </span>
+          </Link>
         </div>
-      </p>
-
-      <p className="contacts__item">
-        <FontAwesomeIcon icon={faTwitter} className="icon" />
-        <div className="contacts__item-details">
-          <p>Twitter: </p>
-          <a
-            href="https://twitter.com/wordpress"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://twitter.com/wordpress
-          </a>
+      </div>
+      <div className="contacts">
+        <FaFacebook color="#26C17E" size={30} />
+        <div>
+          <h3>Facebook</h3>
+          <Link to="https://www.facebook.com/facebook">
+            <span className="link">https://www.facebook.com/facebook</span>
+          </Link>
         </div>
-      </p>
-
-      <p className="contacts__item">
-        <FontAwesomeIcon icon={faFacebook} className="icon" />
-        <di className="contacts__item-details">
-          <p>Facebook: </p>
-          <a
-            href="https://www.facebook.com/facebook"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://www.facebook.com/facebook
-          </a>
-        </di>
-      </p>
-      <p className="contacts__item">
-        <FontAwesomeIcon icon={faSkype} className="icon" />
-        <div className="contacts__item-details">
-          <p>Skype: </p>
-          <a href="skype:kamsolutions.pl">kamsolutions.pl</a>
-        </div>
-      </p>
-    </div>
+      </div>
+    </>
   );
 };
 
 export default Address;
-
-
-
-
-
-
-
-
-

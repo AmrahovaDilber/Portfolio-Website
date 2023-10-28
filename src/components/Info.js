@@ -1,4 +1,4 @@
-import '../assets/styles/Info.scss'
+import "../assets/styles/Info.scss";
 
 const Info = ({ feedback }) => {
   return (

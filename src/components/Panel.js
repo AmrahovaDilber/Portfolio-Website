@@ -3,7 +3,7 @@ import PhotoBox from "../components/PhotoBox";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 // import { Link } from "react-router-dom";
-import myimage from "../assets/images/myimage.jpeg";
+
 import "../assets/styles/Panel.scss";
 import Navigation from "../components/Navigation";
 import { useNavigate } from "react-router-dom";

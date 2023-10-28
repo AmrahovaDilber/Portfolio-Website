@@ -1,37 +1,40 @@
 @import "_variables.scss";
 @import "_mediaQuery.scss";
 
-.navbar {
+.nav {
+  color: #667081;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
   margin-top: 2rem;
   @include tablet {
     padding: 0;
   }
-  &__list {
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    @include tablet {
-      align-items: center;
-    }
-    &-item {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      cursor: pointer;
-      color: $gray-color;
-      &:hover {
-        color: $primary-color;
-        a {
-          color: $primary-color;
-        }
-      }
-      a {
-        text-decoration: none;
-        color: $gray-color;
-        @include tablet {
-          display: none;
-        }
-      }
-    }
+}
+.nav-list {
+  display: flex;
+  gap: 36px;
+  flex-direction: column;
+  @include tablet {
+    align-items: center;
   }
+}
+
+.nav-list a:hover {
+  color: $primary-color;
+}
+
+.nav-text {
+  @include tablet {
+    display: none;
+  }
+}
+
+.active {
+  color: $primary-color;
+}
+
+.nav-item-wrapper {
+  display: flex;
+  gap: 20px;
 }

@@ -4,6 +4,7 @@ import Info from "../components/Info.js";
 
 const Feedback = ({ id, data }) => {
   return (
+    
     <div id={id} className="feedback-list">
       <h1>Feedbacks</h1>
       {data.map((feedbackItem, index) => (

@@ -1,7 +1,5 @@
 import photo from "../assets/images/myimage.jpeg";
 import card1 from "../assets/images/card_1.png";
-// import code2 from "../assets/images/code3.jpg";
-// import ui2 from "../assets/images/ui2.jpg";
 import card3 from "../assets/images/card_3.png"
 
 
@@ -97,10 +95,6 @@ export const feedbackData = [
     },
   },
 ];
-
-
-
-
 
 
 
