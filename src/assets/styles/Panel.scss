@@ -6,9 +6,12 @@
   flex-direction: column;
   position: sticky;
   padding: 1rem;
-  width:250px;
   height: 100%;
   background: #222935;
+
+  &-avatar{
+    width: 250px;
+  }
 
   &__button {
     position: absolute;
@@ -38,6 +41,10 @@
       display: flex;
       flex-direction: column;
       padding: 1rem 2rem;
+
+      &-avatar{
+        width: 54px;
+      }
 
       &-avatar img {
         width: 50px;
