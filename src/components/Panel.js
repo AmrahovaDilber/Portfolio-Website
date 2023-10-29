@@ -17,7 +17,9 @@ export default function Panel() {
   return (
     <div className="panel">
       <div className="panel-avatar">
-        <PhotoBox name="Dilbər Əmrahova" alt="img" />
+        <PhotoBox name="Dilbər Əmrahova"
+        className2='panel-avatar__name'
+          />
       </div>
 
       <Navigation></Navigation>

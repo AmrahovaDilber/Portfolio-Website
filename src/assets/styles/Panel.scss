@@ -6,6 +6,7 @@
   flex-direction: column;
   position: sticky;
   padding: 1rem;
+  width:250px;
   height: 100%;
   background: #222935;
 
@@ -24,6 +25,14 @@
     }
   }
 
+  
+  .panel-avatar__name {
+    color:$white-color;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+
+  }
   @include tablet {
     .panel {
       display: flex;
@@ -53,7 +62,7 @@
       }
     }
 
-    .photo-box__class1 {
+    .photo-box .panel-avatar__name {
       display: none;
     }
   }
