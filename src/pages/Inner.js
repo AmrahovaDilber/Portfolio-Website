@@ -39,7 +39,7 @@ const Inner = () => {
         />
         <div className="content">
           <Box
-            id={"about"}
+            id={"aboutMe"}
             title="About me"
             content="My name is Dilbər Əmrahova, and I am a passionate student pursuing a degree in Information Technology at the University of Economics.
              I have embarked on an exciting journey to become a skilled front-end developer, where technology meets creativity, and user experiences come to life.
