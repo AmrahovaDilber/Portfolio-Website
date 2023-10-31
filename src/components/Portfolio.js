@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { portfolioData } from "../utils/data";
+import Box from "../components/Box";
 import { Link } from "react-router-dom";
-import "../assets/styles/Portfolio.scss";
 
-const Portfolio = ({ id }) => {
+const Portfolio = () => {
   const [data, setData] = useState([]);
   const [activeTab, setActiveTab] = useState("all");
 
@@ -20,9 +20,7 @@ const Portfolio = ({ id }) => {
   }, [data, activeTab]);
 
   return (
-    
-    <section className="portfolio-container" id={id}>
-      <h1>Portfolio</h1>
+    <Box id="portfolio" title="Portfolio" className="portfolio-container">
       <ul className="tabs">
         <li
           className={`tabs-item ${activeTab === "all" ? "active" : ""}`}
@@ -58,7 +56,7 @@ const Portfolio = ({ id }) => {
           </article>
         ))}
       </section>
-    </section>
+    </Box>
   );
 };
 

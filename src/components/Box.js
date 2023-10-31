@@ -1,10 +1,8 @@
-import "../assets/styles/Box.scss";
-
-const Box = ({ id, title, content }) => {
+const Box = ({ id, title, children }) => {
   return (
-    <section id={id}  >
+    <section id={id} className="box">
       <h1>{title}</h1>
-      <p className="box-content">{content}</p>
+      <div className="box-content">{children}</div>
     </section>
   );
 };

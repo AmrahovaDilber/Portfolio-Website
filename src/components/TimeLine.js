@@ -1,5 +1,4 @@
 import React from "react";
-import "../assets/styles/timeline.scss";
 
 function TimeLine({ data, id }) {
   return (

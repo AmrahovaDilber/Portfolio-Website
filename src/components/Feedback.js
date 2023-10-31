@@ -1,12 +1,10 @@
 import React from "react";
-import "../assets/styles/Feedback.scss";
+import Box from "../components/Box"; 
 import Info from "../components/Info.js";
 
-const Feedback = ({ id, data }) => {
+const Feedback = ({ data }) => {
   return (
-    
-    <div id={id} className="feedback-list">
-      <h1>Feedbacks</h1>
+    <Box id="feedbacks" title="Feedback" className="feedback-list">
       {data.map((feedbackItem, index) => (
         <div className="feedback" key={index}>
           <div>
@@ -33,7 +31,7 @@ const Feedback = ({ id, data }) => {
           </div>
         </div>
       ))}
-    </div>
+    </Box>
   );
 };
 

@@ -5,17 +5,16 @@ import { FaEnvelope } from "react-icons/fa6";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-import "../assets/styles/Address.scss";
+import Box from "../components/Box";
 
-const Address = ({ id }) => {
+const Address = () => {
   const handleMailClick = (e) => {
     e.preventDefault();
     window.location.href = "mailto:dilberamrahova1@gmail.com";
   };
 
   return (
-    <>
-      <h1>Contacts</h1>
+    <Box id="contacts" title="Contacts" >
       <div className="contacts">
         <FaPhoneAlt color="#26C17E" size={30} />
         <Link to="tel:+994 51 548 92 72">
@@ -57,7 +56,7 @@ const Address = ({ id }) => {
           </Link>
         </div>
       </div>
-    </>
+    </Box>
   );
 };
 

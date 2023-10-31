@@ -9,6 +9,10 @@
   height: 100%;
   background: #222935;
 
+  &-avatar {
+    width: 250px;
+  }
+
   &__button {
     position: absolute;
     bottom: 1rem;
@@ -24,11 +28,21 @@
     }
   }
 
+  .panel-avatar__name {
+    color: $white-color;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+  }
+
   @include tablet {
     .panel {
       display: flex;
       flex-direction: column;
       padding: 1rem 2rem;
+      &-avatar {
+        width: 54px;
+      }
 
       &-avatar img {
         width: 50px;
@@ -53,7 +67,7 @@
       }
     }
 
-    .photo-box__class1 {
+    .photo-box .panel-avatar__name {
       display: none;
     }
   }
@@ -63,8 +77,8 @@
   .panel-avatar img {
     display: flex;
     align-self: center;
-    width: 163px;
-    height: 163px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 1px solid #ffffff;
     margin-bottom: 10px;
