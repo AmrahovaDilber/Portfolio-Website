@@ -1,20 +1,17 @@
-@import "_variables.scss";
-
 .home {
   background: url(../images/home_bg.png) no-repeat center/cover;
   max-width: 100%;
   height: auto;
-
-  &__photobox {
-    background-color: #0007;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: auto;
-  }
+}
+.home__photobox {
+  background-color: rgba(0, 0, 0, 0.4666666667);
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: auto;
 }
 
 .photo-box .photo-box__class1 {
@@ -23,6 +20,6 @@
   line-height: 54px;
   letter-spacing: 0em;
   text-align: center;
-  color: $white-color;
+  color: #ffffff;
   margin-bottom: 0.5rem;
-}
+}/*# sourceMappingURL=Home.css.map */

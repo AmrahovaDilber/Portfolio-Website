@@ -1,0 +1,30 @@
+.feedback {
+  margin-bottom: 20px;
+}
+
+.reporter {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+.reporter__photo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 5rem;
+}
+
+.reporter-name {
+  font-size: 12px;
+  margin-bottom: 5 px;
+}
+@media (max-width: 600px) {
+  .reporter-name {
+    font-size: 13px;
+  }
+}
+
+.cite-link {
+  color: #26c17e;
+}/*# sourceMappingURL=Feedback.css.map */

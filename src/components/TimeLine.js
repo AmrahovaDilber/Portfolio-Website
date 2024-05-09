@@ -1,24 +1,71 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Info from "./Info";
+import { useSelector, useDispatch } from "react-redux";
+import { getEducation } from "../app/actions/educationAction";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import Box from "../components/Box";
+const textAnimation = {
+  hidden: (custom) => ({
+    x: custom % 2 === 0 ? -100 : 100,
+    opacity: 0,
+  }),
+  visible: (custom) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.3 },
+  }),
+};
 
-function TimeLine({ data, id }) {
+const LoadingBox = () => (
+  <div className="loadingAnimate-box">
+    <FontAwesomeIcon
+      className="loadingAnimate"
+      icon={faSyncAlt}
+      color="#26C17E"
+    />
+  </div>
+);
+
+const ErrorBox = () => (
+  <div className="error">
+    <p>Something went wrong: please review your server connection</p>
+  </div>
+);
+
+const TimeLine = () => {
+  const { data, loading } = useSelector((state) => state.educationReducer);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getEducation());
+  }, [dispatch]);
+
   return (
-    <div id={id} className="timeline">
-      <h1>Education</h1>
-      {data.map((event, index) => (
-        <div className="timeline-event" key={index}>
-          <div className="event">
-            <div className="event__date">{event.date}</div>
-            <div className="event__line"></div>
-          </div>
-
-          <div className="event-details">
-            <h3 className="event-details__title">{event.title}</h3>
-            <p className="event-details__text">{event.text}</p>
-          </div>
-        </div>
-      ))}
-    </div>
+    <Box id="education">
+      <div className="timeline">
+        {" "}
+        <h1>{loading}</h1>
+        <h2 className="timeline-title">Education</h2>
+        {loading ? (
+          <LoadingBox />
+        ) : data ? (
+          <ul className="timeline-list">
+            {data.map((event, i) => (
+              <li custom={i} variants={textAnimation} key={i}>
+                <div className="timeline-date">{event.date}</div>
+                <div className="general-event timeline-event">
+                  <Info title={event.title} feedback={event.text} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ErrorBox />
+        )}
+      </div>
+    </Box>
   );
-}
-export default TimeLine;
+};
 
+export default TimeLine;

@@ -1,0 +1,30 @@
+li {
+  flex-direction: row;
+  display: flex;
+}
+
+.company-date {
+  flex-direction: column;
+  width: 110px;
+}
+
+.experience-details {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-left: 30px;
+}
+@media (max-width: 600px) {
+  .experience-details {
+    margin-left: 40px;
+  }
+}
+
+.experience-date {
+  color: #667081;
+  font-weight: 400;
+}
+
+ul h3 {
+  color: #222935;
+}/*# sourceMappingURL=Expertise.css.map */

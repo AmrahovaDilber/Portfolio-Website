@@ -1,21 +1,25 @@
-import Button from "../components/Button";
-import PhotoBox from "../components/PhotoBox";
+import Button from "../components/Button.js";
+import PhotoBox from "../components/PhotoBox.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import Navigation from "../components/Navigation";
+import { faChevronLeft, faBars } from "@fortawesome/free-solid-svg-icons";
+import Navigation from "../components/Navigation.js";
 import { useNavigate } from "react-router-dom";
 
-export default function Panel() {
+export default function Panel({ collapsed, onCollapse }) {
   const navigate = useNavigate();
   const handleGoBackClick = () => {
     navigate("/");
   };
 
   return (
-    <div className="panel">
+    <aside className={`panel ${collapsed ? "collapsed" : ""}`}>
       <div className="panel-avatar">
-        <PhotoBox name="Dilbər Əmrahova" alt="img"
-        className2='panel-avatar__name'/>
+        <PhotoBox
+          name="Dilbər Əmrahova"
+          alt="img"
+          className="myimage2"
+          className2="panel-avatar__name"
+        />
       </div>
 
       <Navigation></Navigation>
@@ -26,6 +30,9 @@ export default function Panel() {
         icon={<FontAwesomeIcon icon={faChevronLeft} />}
         text="Go back"
       />
-    </div>
+      <button onClick={onCollapse} className="collapse-btn">
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+    </aside>
   );
 }

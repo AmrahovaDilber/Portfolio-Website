@@ -1,5 +1,5 @@
-import PhotoBox from "../components/PhotoBox";
-import Button from "../components/Button";
+import PhotoBox from "../components/PhotoBox.js";
+import Button from "../components/Button.js";
 import { useNavigate } from "react-router-dom";
 import "../assets/styles/Home.scss";
 
@@ -10,8 +10,8 @@ const Home = () => {
   };
 
   return (
-    <section className="container">
-      <div className="container__photobox">
+    <section className="home">
+      <div className="home__photobox">
         <PhotoBox
           name="Dilbər Əmrahova"
           title="Programmer. Creative. Innovator"

@@ -4,39 +4,27 @@
 .main {
   display: flex;
 
-  &__sidebar.open {
-    display: block;
-  }
-  &__sidebar.closed {
-    display: none;
+  &--sidebar {
+    z-index: 2;
   }
 }
 
-.main-content {
-  position: relative;
+.container {
+  transition: margin-left 0.5s ease-in-out;
+  margin-left: 18rem;
+  margin-right: 3rem;
+  overflow: hidden;
+  z-index: 1;
 
-  margin-right: 36px;
-  & button {
-    padding: 0.2rem 0.3rem;
-    border-radius: 0.3rem;
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-    position: absolute;
-    top: 0.5rem;
-    background: $secondary-color;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    & span {
-      font-size: 1.5rem;
-      color: #fff;
-    }
+  @include tablet {
+    margin-left: 6rem;
   }
 }
-.content {
+
+.container.collapsed {
   margin-left: 30px;
   @include tablet {
-    margin-right: 36px;
+    margin-left: 3rem;
   }
 }
 
@@ -45,7 +33,7 @@
   height: 35px;
   background-color: $secondary-color;
   position: fixed;
-  right: 36px;
+  right: 48px;
   bottom: 1px;
   color: #fff;
   font-size: 20px;
@@ -55,8 +43,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
   &:hover {
     background-color: $secondary-color;
+  }
+  @include tablet {
+    right: 15px;
   }
 }
